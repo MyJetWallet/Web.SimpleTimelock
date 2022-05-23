@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>Get info about locked tokens</title>
+
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="./index.js"></script>
+  </head>
+
+  <body class="container">
+
+    <h1 class="page-header">Get info about locked tokens - Polygon network</h1>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">Release tokens</h3>
+        <form class="form-inline" role="form">
+          <a href="#" onclick="release()" class="btn btn-primary">Set</a>
+          <label id="transaction"></label>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h3 class="sub-header">Get last information</h3>
+        <form class="form-inline" role="form">
+          <a href="#" onclick="loadInfo()" class="btn btn-primary">Get</a>
+          <div class="form-group">
+            <table>
+              <tr>
+                <td>Lastest BlockNumber:</td>
+                <td>
+                  <label id="blockNumber">
+                </td>
+              </tr>
+              <tr>
+                <td>Lastest Timestamp:</td>
+                <td>
+                  <label id="timestamp">
+                </td>
+              </tr>
+              <tr>
+                <td>BeneficiaryRecord:</td>
+                <td>
+                  <label id="beneficiaryRecord">
+                </td>
+              </tr>
+              <tr>
+                <td>ReleaseTime:</td>
+                <td>
+                  <label id="releaseTime">
+                </td>
+              </tr>
+              <tr>
+                <td>UnlockInterval:</td>
+                <td>
+                  <label id="unlockInterval">
+                </td>
+              </tr>
+              <tr>
+                <td>UnlockAmount:</td>
+                <td>
+                  <label id="unlockAmount">
+                </td>
+              </tr>
+              <tr>
+                <td>TokenAmount:</td>
+                <td>
+                  <label id="tokenAmount">
+                </td>
+              </tr>
+              <tr>
+                <td>TotalLockedTokens:</td>
+                <td>
+                  <label id="lockedTokens">
+                </td>
+              </tr>
+              <tr>
+                <td>ExpectedRelease:</td>
+                <td>
+                  <label id="expectedRelease">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
