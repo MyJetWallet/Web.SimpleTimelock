@@ -16,7 +16,6 @@ jobs:
         node-version: 14
 
     - run: npm ci
-    - run: npm test
 
     - name: Get current time
       uses: MyJetTools/get-current-time@v2
