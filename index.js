@@ -215,7 +215,7 @@ function release() {
     
     contract.methods.release().send({ from: account }).then(function (tx) {
         console.log("Transaction: ", tx);
-        document.getElementById('transaction').innerHTML = tx;
+        document.getElementById('transaction').innerHTML = tx.transactionHash;
     });
 }
 
