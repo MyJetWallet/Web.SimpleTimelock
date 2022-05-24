@@ -28,151 +28,169 @@ window.addEventListener('load', async () => {
     }
 
     // contractAddress and abi are setted after contract deploy
-    var contractAddress = '0x17D87a9B6b8ec5df93fE4229dA8f727411e9F5ea';
+    var contractAddress = '0x42ca190eF9A342E650E7d13F465e6D134bF97C07';
     var abi = [
-        {
-          "inputs": [
-            {
-              "internalType": "contract IERC20",
-              "name": "token_",
-              "type": "address"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "constructor"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "beneficiaryAddress_",
-              "type": "address"
-            }
-          ],
-          "name": "beneficiaryRecord",
-          "outputs": [
-            {
-              "components": [
-                {
-                  "internalType": "uint256",
-                  "name": "lastUnlockTime",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "tokenAmount",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "releaseTime",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "unlockInterval",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "unlockAmount",
-                  "type": "uint256"
-                }
-              ],
-              "internalType": "struct SimpleTimelock.BeneficiaryRecord",
-              "name": "",
-              "type": "tuple"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "beneficiaryAddress_",
-              "type": "address"
-            }
-          ],
-          "name": "expectedRelease",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "lockedTokens",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "release",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "beneficiaryAddress_",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "tokenAmount_",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "releaseTime_",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "unlockInterval_",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "unlockAmount_",
-              "type": "uint256"
-            }
-          ],
-          "name": "setBeneficiary",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "token",
-          "outputs": [
-            {
-              "internalType": "contract IERC20",
-              "name": "",
-              "type": "address"
-            }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        }
-      ];
+      {
+        "inputs": [
+          {
+            "internalType": "contract IERC20",
+            "name": "token_",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "owner_",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "beneficiaryAddress_",
+            "type": "address"
+          }
+        ],
+        "name": "beneficiaryRecord",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "lastUnlockTime",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "tokenAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "releaseTime",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "unlockInterval",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "unlockAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct SimpleTimelock.BeneficiaryRecord",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "beneficiaryAddress_",
+            "type": "address"
+          }
+        ],
+        "name": "expectedRelease",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "lockedTokens",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "release",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "beneficiaryAddress_",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tokenAmount_",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "releaseTime_",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "unlockInterval_",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "unlockAmount_",
+            "type": "uint256"
+          }
+        ],
+        "name": "setBeneficiary",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "newOwner_",
+            "type": "address"
+          }
+        ],
+        "name": "setNewOwner",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "token",
+        "outputs": [
+          {
+            "internalType": "contract IERC20",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ];
 
     contract = new web3.eth.Contract(abi, contractAddress);
 
